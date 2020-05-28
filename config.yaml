@@ -1,0 +1,31 @@
+commentVisibilityDays: 30
+commentIsFreshDays: 6
+inputFile: 'jira.xml' # the Jira export file to parse
+outputFile: "output.html" # output markdown
+projects: 
+  - name: myCornèr
+    key: MYC
+    email: matteo.pelucco@corner.ch
+  - name: Cornèrcard
+    key: CMA
+    email: simone.baracani@corner.ch
+status: 
+  - name: Funnel
+    code: SAFE_EPIC_FUNNEL
+  - name: Analysing
+    code: SAFE_EPIC_ANALYZING
+  - name: W.I.P.
+    code: SAFE_EPIC_WIP
+  - name: Backlog
+    code: SAFE_FEATURE_BACKLOG
+  - name: Implementing
+    code: SAFE_FEATURE_IMPLEMENTING
+  - name: Validating on Staging
+    code: SAFE_FEATURE_VALIDATING_ON_STAGE
+  - name: Deploying to PROD
+    code: SAFE_FEATURE_DEPLOYING_TO_PRODUCTION
+  - name: Releasing
+    code: SAFE_FEATURE_RELEASING
+  - name: Done
+    code: SAFE_FEATURE_DONE
+
