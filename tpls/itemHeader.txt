@@ -1,0 +1,3 @@
+<div class="item{itemLabel}">
+<h3>{itemSummary}</h3>
+<div class="comments">

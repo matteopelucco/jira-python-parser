@@ -1,1 +1,2 @@
-status header {statusName}
+<div class="status">
+<h2>{statusName}</h2>

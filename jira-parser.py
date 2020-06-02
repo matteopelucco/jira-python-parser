@@ -42,13 +42,21 @@ for project in config.projects:
 
             itemStatus = item.find("status").text
             itemProjectKey = item.find("project").attrib["key"]
-            itemTitle = item.find('title').text
+            itemSummary = item.find('title').text
+            itemLabel = ""
+            for label in item.findall('labels/label'):
+                itemLabel = itemLabel + " item-" + label.text
 
             if itemProjectKey == project["key"] and itemStatus == status["code"]: 
-                html.printItem(itemTitle)
+                html.printItemHeader(itemSummary, itemLabel)
 
-        html.printStatusFooter(status)
-    html.printProjectFooter(project)
+                for comment in item.findall('comments/comment'):
+                    html.printComment(comment)
+
+                html.printItemFooter()
+
+        html.printStatusFooter()
+    html.printProjectFooter()
 html.printFooter()
 print("all done!")
     

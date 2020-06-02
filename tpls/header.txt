@@ -1,1 +1,52 @@
-header
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style type="text/css">
+
+p {
+    font-size: 1em;
+}
+
+.item {
+    width: 100%;
+}
+.item>h3 {
+    height: 1.2em;
+    color: #111;
+    border-left: 1.4em solid grey;
+    padding-left: 0.8em;
+}
+
+.item-standby h3 { border-color: black;}
+.item-feature h3 { border-color: #d259e6;}
+.item-technical h3 { border-color: #2196f3;}
+.item-r2020 h3 { border-color: #ffeb3b;}
+.item-regulatory h3 { border-color: #4caf50;}
+.item-dismissione-mainframe h3 { border-color: #ff9800;}
+
+.comment {
+    margin-left: 2.2em;
+}
+
+.comment h4 {
+    font-size: 0.75em;
+}
+
+.comment h4.current {
+    color: blue;
+}
+
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
