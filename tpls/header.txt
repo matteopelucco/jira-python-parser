@@ -9,6 +9,10 @@
 
   <style type="text/css">
 
+* {
+  font-family: Arial, sans-serif;
+}
+
 p {
     font-size: 1em;
 }
@@ -17,29 +21,63 @@ p {
     width: 100%;
 }
 .item>h3 {
-    height: 1.2em;
+    height: 1.4em;
     color: #111;
     border-left: 1.4em solid grey;
     padding-left: 0.8em;
+    display: block;
+    width: 100%;
 }
 
-.item-standby h3 { border-color: black;}
+.item>h3 a {
+  font-size: 0.6em;
+}
+
+.item-standby h3 { border-color: #000000;}
+.item-standby .comment { border-color: #00000050; }
 .item-feature h3 { border-color: #d259e6;}
+.item-feature .comment { border-color: #d259e650; }
 .item-technical h3 { border-color: #2196f3;}
+.item-technical .comment { border-color: #2196f350; }
 .item-r2020 h3 { border-color: #ffeb3b;}
+.item-r2020 .comment { border-color: #ffeb3b50; }
 .item-regulatory h3 { border-color: #4caf50;}
+.item-regulatory .comment { border-color: #4caf5050; }
 .item-dismissione-mainframe h3 { border-color: #ff9800;}
+.item-dismissione .comment { border-color: #ff980050; }
 
 .comment {
-    margin-left: 2.2em;
+    margin-left: 2.6em;
+    margin-top: 0.8em;
+
+    border-left: 0.4em solid grey;
+    padding-left: 0.8em;
 }
 
 .comment h4 {
-    font-size: 0.75em;
+    font-size: 0.8em;
+    display: block;
+    width: 100%;
+    margin: 0 0 0.4em 0 ;
 }
 
 .comment h4.current {
     color: blue;
+}
+
+.comment p {
+    margin: 0;
+    line-height: 1.4em;
+    font-size: 0.8em;
+}
+
+.comment ul {
+    margin: 0;
+}
+
+.comment ul li {
+    line-height: 1.4em;
+    font-size: 0.8em;
 }
 
   </style>

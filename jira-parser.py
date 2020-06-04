@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 # custom helpers
 from classes.ConfigHelper import Config as Config
 from classes.HtmlHelper import Html as Html
+from classes.ParserHelper import Parser as Parser
 
 # logger settings
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -21,6 +22,7 @@ print("===============================================")
 print("loading config..")
 config = Config("config.yaml")
 html = Html(config.outputFile)
+parser = Parser(config)
 
 print("reading input file..")
 with open(config.inputFile) as inputFile:
@@ -40,18 +42,18 @@ for project in config.projects:
 
         for item in xmlRoot.findall('channel/item'):
 
-            itemStatus = item.find("status").text
-            itemProjectKey = item.find("project").attrib["key"]
-            itemSummary = item.find('title').text
-            itemLabel = ""
-            for label in item.findall('labels/label'):
-                itemLabel = itemLabel + " item-" + label.text
+            item = parser.buildItem(item)
 
-            if itemProjectKey == project["key"] and itemStatus == status["code"]: 
-                html.printItemHeader(itemSummary, itemLabel)
+            if item['projectKey'] == project['key'] and item['status'] == status['code']: 
+                html.printItemHeader(item)
 
-                for comment in item.findall('comments/comment'):
-                    html.printComment(comment)
+                comments = item['comments']
+
+                if comments is None: 
+                    html.printNoComment()
+                else:
+                    for comment in comments:
+                        html.printComment(comment)
 
                 html.printItemFooter()
 

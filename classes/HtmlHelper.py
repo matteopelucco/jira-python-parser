@@ -16,7 +16,8 @@ class Html:
         self.tplStatusFooter = self.loadTemplate('tpls/statusFooter.txt')
         self.tplItemHeader = self.loadTemplate('tpls/itemHeader.txt')   
         self.tplItemFooter = self.loadTemplate('tpls/itemFooter.txt')   
-        self.tplComment = self.loadTemplate('tpls/comment.txt')       
+        self.tplComment = self.loadTemplate('tpls/comment.txt')  
+        self.tplNoComment = self.loadTemplate('tpls/noComment.txt')       
 
     def loadTemplate(self, tplName):
         with open(tplName, 'r') as file:
@@ -51,9 +52,9 @@ class Html:
         with open(self.file, 'a') as file:
             self.write(self.tplStatusFooter)
 
-    def printItemHeader(self, itemSummary, itemLabel):
+    def printItemHeader(self, item):
         with open(self.file, 'a') as file:
-            self.write(self.tplItemHeader.format(itemSummary = itemSummary, itemLabel = itemLabel))
+            self.write(self.tplItemHeader.format(itemSummary = item['summary'], itemLabels = item['labels'], itemLink = item['link'], itemKey = item['key']))
 
     def printItemFooter(self):
         with open(self.file, 'a') as file:
@@ -61,9 +62,12 @@ class Html:
 
     def printComment(self, comment):
         with open(self.file, 'a') as file:
-            self.write(self.tplComment.format(commentDate = comment.attrib['created'], commentAuthor = comment.attrib['author'], commentText = comment.text))
+            self.write(self.tplComment.format(commentDate = comment['created'], commentAuthor = comment['author'], commentText = comment['text']))
 
-    
+    def printNoComment(self):
+        with open(self.file, 'a') as file:
+            self.write(self.tplNoComment)
+
 
     
 

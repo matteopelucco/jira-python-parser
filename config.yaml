@@ -2,6 +2,7 @@ commentVisibilityDays: 30
 commentIsFreshDays: 6
 inputFile: 'jira.xml' # the Jira export file to parse
 outputFile: "output.html" # output markdown
+jiraBaseUrl: 'https://dev.jira.corner.ch'
 projects: 
   - name: myCornèr
     key: MYC
@@ -9,6 +10,18 @@ projects:
   - name: Cornèrcard
     key: CMA
     email: simone.baracani@corner.ch
+  - name: COP1
+    key: IC2020
+    email: danilo.angioletti@corner.ch
+  - name: COP2
+    key: CON2020
+    email: danilo.angioletti@corner.ch
+  - name: Nevis
+    key: NEVISP
+    email: ralf.mureddu@corner.ch
+  - name: Cornèronline
+    key: PTC
+    email: giovanni.sardelli@corner.ch
 status: 
   - name: Funnel
     code: SAFE_EPIC_FUNNEL

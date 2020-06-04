@@ -14,5 +14,6 @@ class Config:
                 self.outputFile = configFile['outputFile']
                 self.projects = configFile['projects']
                 self.status = configFile['status']
+                self.jiraBaseUrl = configFile['jiraBaseUrl']
             except yaml.YAMLError as exc:
                 print(exc)
