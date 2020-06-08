@@ -25,7 +25,7 @@ class Parser:
         newItem['projectKey'] = item.find("project").attrib["key"]
         newItem['summary'] = item.find('title').text
         newItem['key'] = item.find('key').text
-        newItem['link'] = self.config.jiraBaseUrl + "/browse/" + item.find('key').text
+        newItem['link'] = self.config.jira['baseUrl'] + "/browse/" + item.find('key').text
         
         labels = ""
         for label in item.findall('labels/label'):

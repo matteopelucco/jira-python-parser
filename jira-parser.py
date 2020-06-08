@@ -25,9 +25,7 @@ html = Html(config.outputFile)
 parser = Parser(config)
 
 print("reading input file..")
-with open(config.inputFile) as inputFile:
-    xmlTree = ET.parse(inputFile)
-    xmlRoot = xmlTree.getroot()
+xmlRoot = config.readInputFile()
 
 print("preparing output file..")
 open(config.outputFile, 'w').close()

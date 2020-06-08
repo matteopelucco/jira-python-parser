@@ -44,7 +44,7 @@ p {
 .item-regulatory h3 { border-color: #4caf50;}
 .item-regulatory .comment { border-color: #4caf5050; }
 .item-dismissione-mainframe h3 { border-color: #ff9800;}
-.item-dismissione .comment { border-color: #ff980050; }
+.item-dismissione-mainframe .comment { border-color: #ff980050; }
 
 .comment {
     margin-left: 2.6em;

@@ -1,8 +1,11 @@
 commentVisibilityDays: 30
 commentIsFreshDays: 6
 inputFile: 'jira.xml' # the Jira export file to parse
+_inputFile: https://dev.jira.corner.ch/sr/jira.issueviews:searchrequest-xml/12005/SearchRequest-12005.xml?tempMax=1000
 outputFile: "output.html" # output markdown
-jiraBaseUrl: 'https://dev.jira.corner.ch'
+jira:
+  baseUrl: 'https://dev.jira.corner.ch'
+  exportUrl: /sr/jira.issueviews:searchrequest-xml/12005/SearchRequest-12005.xml?tempMax=1000
 projects: 
   - name: myCornèr
     key: MYC
