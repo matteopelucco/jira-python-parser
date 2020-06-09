@@ -61,8 +61,11 @@ class Html:
             self.write(self.tplItemFooter)
 
     def printComment(self, comment):
+        commentClass = ""
+        if comment["isFresh"] == True: 
+            commentClass = "current"
         with open(self.file, 'a') as file:
-            self.write(self.tplComment.format(commentDate = comment['created'], commentAuthor = comment['author'], commentText = comment['text']))
+            self.write(self.tplComment.format(commentDate = comment['createdReverse'], commentAuthor = comment['author'], commentText = comment['text'], commentClass = commentClass))
 
     def printNoComment(self):
         with open(self.file, 'a') as file:

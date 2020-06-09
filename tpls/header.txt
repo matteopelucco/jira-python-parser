@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/blitzer/jquery-ui.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
   <style type="text/css">
 
@@ -24,7 +24,7 @@ p {
 }
 .item>h3 {
     height: 1.4em;
-    color: #111;
+    color: #111; 
     border-left: 1.4em solid grey;
     padding-left: 0.8em;
     display: block;
@@ -86,6 +86,13 @@ p {
 .ui-accordion-content{
     height:auto !important;
 }
+
+.accordion-expand-holder {
+    margin:10px 0;
+}
+.accordion-expand-holder .open, .accordion-expand-holder .close {
+    margin:0 10px 0 0;
+}
   </style>
 </head>
 
@@ -94,5 +101,10 @@ p {
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <p>Kanban SAFe - Jira export</p>
+  <h1>Kanban SAFe - Jira export</h1>
+
+  <div class="accordion-expand-holder">
+    <button type="button" class="open">Expand all</button>
+    <button type="button" class="close">Collapse all</button>
+  </div>
 

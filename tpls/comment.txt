@@ -1,5 +1,5 @@
 <div class="comment">
-<h4 class="current">{commentDate} @{commentAuthor}</h4>
+<h4 class="{commentClass}">{commentDate} @{commentAuthor}</h4>
 <div>
 {commentText}
 </div>

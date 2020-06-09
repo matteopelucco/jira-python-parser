@@ -25,3 +25,31 @@ Do you want to contrinute? PR are more than welcome, expecially because I am not
 1) Export from Trello the board you want to convert and save as `trello.json` on project root
 2) Launch `python3 trello-parser.py` and it will generate an output file `output.md`, again at root project
 Beware: output make usage of colors, usually done with `<span/>` markup. You can use the suggested markdown viewer to see a proper output (or enable HTML tag rendering on your favorite MD viewer)
+
+# jQuery UI themes
+
+base 
+black-tie 
+blitzer 
+cupertino 
+dark-hive 
+dot-luv 
+eggplant 
+excite-bike 
+flick 
+hot-sneaks 
+humanity 
+le-frog 
+mint-choc 
+overcast 
+pepper-grinder 
+redmond 
+smoothness 
+south-street 
+start 
+sunny 
+swanky-purse 
+trontastic 
+ui-darkness 
+ui-lightness 
+vader

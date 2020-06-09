@@ -1,4 +1,5 @@
-import yaml, urllib, json, logging, sys, os
+import yaml, urllib, json, logging, sys, os, time
+from datetime import datetime, timezone
 
 class Parser:
     
@@ -14,6 +15,23 @@ class Parser:
             comment['created'] = elem.attrib['created']
             comment['author'] = elem.attrib['author']
             comment['text'] = elem.text
+
+            # Mon, 8 Jun 2020 10:10:50 +0200
+
+            now = datetime.now()
+            dateObj = datetime.strptime(comment['created'], '%a, %d %b %Y %H:%M:%S %z')
+            now = datetime.now(timezone.utc)
+            if ((now - dateObj).days > self.config.commentVisibilityDays):
+                continue
+            if ((now - dateObj).days > self.config.commentIsFreshDays):
+                comment["isFresh"] = False
+            else:
+                comment["isFresh"] = True
+
+            # dateReverse = str(dateObj.year) + "." + str(dateObj.month) + "." + str(dateObj.day)
+            dateReverse = dateObj.strftime("%Y.%m.%d %H:%M:%S")
+            comment["createdReverse"] = dateReverse
+
             cardComments.append(comment)
         
         return sorted(cardComments, key=lambda k: k['id'], reverse=True)
