@@ -41,7 +41,12 @@ class Parser:
         newItem = {}
         newItem['status'] = item.find("status").text
         newItem['projectKey'] = item.find("project").attrib["key"]
-        newItem['summary'] = item.find('title').text
+        summary = item.find('title').text
+        
+        # clean Jira ID on Epics summary, can be tedious. [MYC-1233] myEpic => myEpic
+        summary = summary[(summary.find(']') + 1):]
+        newItem['summary'] = summary
+
         newItem['key'] = item.find('key').text
         newItem['link'] = self.config.jira['baseUrl'] + "/browse/" + item.find('key').text
         
