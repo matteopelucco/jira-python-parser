@@ -1,1 +1,3 @@
-<h1>{projectName}</h1>
+<div class="accordion">
+    <h3>{projectName}</h3>
+    <div>

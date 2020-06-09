@@ -1,2 +1,3 @@
-<div class="status">
-<h2>{statusName}</h2>
+<div class="_status accordion">
+    <h3>{statusName}</h3>
+    <div>
