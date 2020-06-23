@@ -25,6 +25,12 @@ projects:
   - name: Cornèronline
     key: PTC
     email: giovanni.sardelli@corner.ch
+  - name: Public Sites
+    key: PS
+    email: eugenio.riccio@corner.ch
+  - name: CNS
+    key: CNS
+    email: elena.puiu.fincons@corner.ch
 status: 
   - name: Funnel
     code: SAFE_EPIC_FUNNEL
